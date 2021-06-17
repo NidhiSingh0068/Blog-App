@@ -1,0 +1,31 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 17px;
+}
+
+.shadow {
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+}
+
+
+.masthead {
+    background: #6c757d;
+    height: auto;
+    padding-bottom: 15px;
+    box-shadow: 0 16px 48px #E3E7EB;
+    padding-top: 10px;
+}
+
+.card {
+    box-shadow: 0 16px 48px #E3E7EB;
+}
+
+.pagination .page-link {
+    color : #6c757d;
+    font-weight:bolder;
+}
+
+.navbar .navbar-brand span{
+    color:#ffffff;
+    font-weight:bolder;
+}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block content %}
+{% load crispy_forms_tags %}
+
+  <header class="masthead">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-12 mx-auto">
+                    <div class="site-heading">
+                        <h3 class="site-heading my-1 mt-3 text-white">{% block title %} {{ post.title }} {% endblock title %}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+    <div class="row">
+      <div class="col-md-8 card mb-4  mt-3 left  top">
+       
+      <div class="card-body">
+        
+        <p class=" text-muted">{{ post.author }} | {{ post.created_on }} | Categories:{{ post.category }}</p>
+        <p class="card-text ">{{ post.content | safe }}</p>
+      </div>
+    </div>
+    {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+  </div>
+</div>
+ 
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+    <div class="card-body">
+     <a class="btn btn-outline-secondary my-2 my-sm-0" href="/">&#8592; Go Back</a>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %} Search Results {% endblock title %}
+{% block blogactive %} active {% endblock blogactive %} 
+
+
+
+{% block content %}
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    
+                    <h1 class="text-light">You Searched.. &nbsp
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 left">
+        {% for post in allPosts  %}
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title">{{ post.title }}</h2>
+                <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                <p class="card-text">{{post.content| safe|slice:":350" }}</p>
+                <a href="{% url 'post_detail' post.slug  %}" class="btn btn-outline-secondary my-2 my-sm-0">Read More &rarr;</a>
+             </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+ {% endfor %}
+ 
+ {% endblock %}
